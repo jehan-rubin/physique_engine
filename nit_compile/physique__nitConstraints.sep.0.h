@@ -1,0 +1,28 @@
+#include "nit.common.h"
+extern const int COLOR_physique__nitConstraints__Position_95d2d___x;
+extern const int COLOR_physique__nitConstraints__Position_95d2d___y;
+extern const int COLOR_physique__nitConstraints__Position_95d2d__x_61d;
+extern const int COLOR_physique__nitConstraints__Position_95d2d__y_61d;
+extern const int COLOR_physique___physique__Position_95d2d___core__kernel__Object__init;
+extern const int COLOR_physique__nitConstraints__Dimensions_95d2d___height;
+extern const int COLOR_physique__nitConstraints__Dimensions_95d2d___width;
+extern const int COLOR_physique___physique__Dimensions_95d2d___core__kernel__Object__init;
+extern const int COLOR_physique__nitConstraints__Area_95d2d___p1;
+extern const char FILE_physique__nitConstraints[];
+extern const int COLOR_physique__nitConstraints__Area_95d2d___p2;
+extern const int COLOR_physique___physique__Area_95d2d___core__kernel__Object__init;
+extern const int COLOR_physique__nitConstraints__Area_95d2d__compute_area;
+extern const int COLOR_physique__nitConstraints__Vector_95d2d___v_x;
+extern const int COLOR_physique__nitConstraints__Vector_95d2d___v_y;
+extern const int COLOR_physique__nitConstraints__Vector_95d2d__v_x;
+extern const int COLOR_physique__nitConstraints__Vector_95d2d__v_y;
+extern const struct type type_core__Float;
+extern const char FILE_core__kernel[];
+extern const int COLOR_physique__nitConstraints__Vector_95d2d__v_x_61d;
+extern const int COLOR_physique__nitConstraints__Vector_95d2d__v_y_61d;
+double core__math___Float___sqrt(double self);
+val* NEW_physique__Vector_95d2d(const struct type* type);
+extern const struct type type_physique__Vector_95d2d;
+extern const int COLOR_physique__nitConstraints__Vector_95d2d__length;
+extern const int COLOR_core__kernel__Object__init;
+extern const int COLOR_physique___physique__Vector_95d2d___core__kernel__Object__init;

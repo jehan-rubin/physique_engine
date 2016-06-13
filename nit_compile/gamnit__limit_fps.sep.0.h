@@ -1,0 +1,24 @@
+#include "nit.common.h"
+extern const int COLOR_gamnit__limit_fps__App___maximum_fps;
+extern const int COLOR_gamnit__limit_fps__App___current_fps;
+extern const int COLOR_gamnit__limit_fps___app__App___frame_full;
+extern const int COLOR_gamnit__limit_fps__App__limit_fps;
+extern const int COLOR_gamnit__limit_fps__App___clock;
+extern const char FILE_gamnit__limit_fps[];
+extern const int COLOR_gamnit__limit_fps__App___frame_count;
+extern const int COLOR_gamnit__limit_fps__App___frame_count_deadline;
+extern const int COLOR_gamnit__limit_fps__App__clock;
+extern const int COLOR_realtime__Clock__total;
+extern const int COLOR_realtime__Timespec__sec;
+extern const int COLOR_gamnit__limit_fps__App__frame_count_deadline;
+extern const struct type type_core__Int;
+extern const char FILE_core__kernel[];
+extern const int COLOR_gamnit__limit_fps__App__frame_count;
+extern const struct type type_core__Float;
+extern const int COLOR_gamnit__limit_fps__App__current_fps_61d;
+extern const int COLOR_gamnit__limit_fps__App__frame_count_61d;
+extern const int COLOR_gamnit__limit_fps__App__frame_count_deadline_61d;
+extern const int COLOR_gamnit__limit_fps__App__maximum_fps;
+extern const int COLOR_realtime__Clock__lapse;
+extern const int COLOR_realtime__Timespec__to_f;
+void core__time___Float___sleep(double self);
