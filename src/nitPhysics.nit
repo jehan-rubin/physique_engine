@@ -7,7 +7,7 @@ import nitConstraints
 class Collision
  
 	# This function will check if there is a collision between two entities 
-	fun check_collision(e1: Entity, e2: Entity) : Bool
+	fun check_collision(e1: Entity, e2: Entity)
 	do
 		
 		var dx = e2.position.x-e1.position.x
@@ -19,32 +19,10 @@ class Collision
 		if dy < 0.0 then dy = dy * (-1.0)
 
 
-		if e1 isa Circle and e2 isa Polygone then if dx <= e1.radius + (e2.dimensions.width/2.0) and dy <= e1.radius + (e2.dimensions.height/2.0) then 
-			e1.play_back
-			e2.play_back
-			resolve_collision(e1,e2)
-			return false
-		end
+		if e1 isa Circle and e2 isa Polygone then if dx <= e1.radius + (e2.dimensions.width/2.0) and dy <= e1.radius + (e2.dimensions.height/2.0) then resolve_collision(e1,e2)
 
 
-		if e1 isa Circle and e2 isa Circle then if e1.distance_topoint(e2.position) <= e1.radius + e2.radius then 
-			e1.play_back
-			e2.play_back
-
-			if e1 isa Player and e1.is_touch == true then
-				resolve_collision(e1,e2)
-				return true
-			else if e2 isa Player and e2.is_touch == true then
-				resolve_collision(e1,e2)
-				return true
-			end
-
-		resolve_collision(e1,e2)
-		return false
-		end
-
-		
-		return true
+		if e1 isa Circle and e2 isa Circle then if e1.distance_topoint(e2.position) <= e1.radius + e2.radius then resolve_collision(e1,e2)
 	end
 
 	# This function will resolve the collision 
@@ -53,12 +31,12 @@ class Collision
 
 		if e1 isa Circle and e2 isa Polygone then 
 				if (e1.position.x  <= e2.position.x + e2.dimensions.width/2.0) and (e1.position.x >= e2.position.x - e2.dimensions.width/2.0) then 
-					#e1.play_back
+					e1.play_back
 					e1.vector.v_y *= -e1.coef_elas
 				end
 
 				if (e1.position.y  <= e2.position.y + e2.dimensions.height/2.0) and (e1.position.y >= e2.position.y - e2.dimensions.height/2.0) then 
-					#e1.play_back
+					e1.play_back
 					e1.vector.v_x *= -e1.coef_elas
 				end
 		end 
@@ -77,17 +55,16 @@ class Collision
             var resX = (normalized_vector_e1_e2.v_x * normalized_Scalaire_e2) - (normalized_vector_e1_e2.v_x * normalized_Scalaire_e1)
             var resY = (normalized_vector_e1_e2.v_y * normalized_Scalaire_e2) - (normalized_vector_e1_e2.v_y * normalized_Scalaire_e1)
 
-	 		if e1.is_moovable == false then
+            	e1.play_back	 		
 	            e1.vector.v_x = ((e1.vector.v_x + resX))
 	            e1.vector.v_y = ((e1.vector.v_y + resY))
-	        end
+	       
 
 	        
-	            e2.play_back
-	        if e2.is_moovable == false then
+	            e2.play_back	       
 	            e2.vector.v_x = ((e2.vector.v_x - resX))
 	            e2.vector.v_y = ((e2.vector.v_y - resY))
-	        end
+	        
 	end
 end
 

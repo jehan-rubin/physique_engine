@@ -169,7 +169,7 @@ class Player
 super Circle 	
 
 var name : String 
-var is_touch : Bool = true is writable
+
 	init 
 	do
 		self.is_dynamic = false 
@@ -179,6 +179,21 @@ var is_touch : Bool = true is writable
 	redef fun update_position 
 	do
 		self.position.x += self.vector.v_x
-		self.position.y += self.vector.v_y	
+		self.position.y += self.vector.v_y
+		self.check_limit
+	end
+
+	fun check_limit 
+	do
+		if (self.position.x.abs + self.radius / 2.0) > 340.0 - 50.0 then
+
+			if self.position.x > 0.0 then
+				self.vector.v_x = (self.vector.v_x / -2.0)
+				self.position.x -= 10.0
+			else
+				self.vector.v_x = (self.vector.v_x/ -2.0)
+				self.position.x += 10.0
+			end
+		end	
 	end
 end

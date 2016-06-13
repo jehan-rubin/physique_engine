@@ -33,31 +33,8 @@ class World
 	# Check collision between two entities 
 	private fun check_collision(e1: Entity, e2: Entity) do
 		var collision = new Collision 
-		var bool = collision.check_collision(e1, e2)
-		print bool
-		if e1 isa Player and bool == true then
-			print "player"
-
-			if e1.is_touch == true then				
-				e1.is_touch = false
-				for e in entities do
-					if e isa Player and e1.name != e.name then
-						e.is_touch = true 
-					end
-				end
-			end
-
-		else if e2 isa Player and bool == true then
-			print "player"
-			if e2.is_touch == true then
-				e2.is_touch = false
-				for e in entities do
-					if e isa Player and e2.name != e.name then
-						e.is_touch = true 
-					end
-				end
-			end
-		end		
+		 collision.check_collision(e1, e2)
+		
 	end  
 	# Apply the effect of forces to each entity 
 	private fun apply_forces_entities do for e in self.entities do for f in forces_applied do f.apply_force(e)
@@ -66,8 +43,9 @@ class World
 	do
 		for i in [0 .. entities.length-1] do 
 			for j in  [ i+1 .. entities.length-1] do
-				if entities[j] == player then
-					entities[j].vector.v_x += control
+				if entities[j] == player then										
+						entities[j].vector.v_x += control
+					
 				end
 			end
 		end
