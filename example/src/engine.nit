@@ -1,12 +1,12 @@
 module engine
 
 import world
-import nitSimulation
+import physique::nitSimulation
 import spritesheet
 import gamnit::flat
 import gamnit::display_linux
 import gamnit::limit_fps
-import nitConstraints 
+import physique::nitConstraints 
 
 # Class App is the main class of this application
 redef class App	

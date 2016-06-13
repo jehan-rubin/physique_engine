@@ -1,5 +1,5 @@
-NITC=../../bin/nitc
-NITLS=../../bin/nitls
+NITC=../../../bin/nitc
+NITLS=../../../bin/nitls
 
 all: bin/engine
 
