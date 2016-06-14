@@ -43,9 +43,12 @@ class World
 	do
 		for i in [0 .. entities.length-1] do 
 			for j in  [ i+1 .. entities.length-1] do
-				if entities[j] == player then										
+				if entities[j] == player then	
+					if control == 1.0 or control == -1.0 then									
 						entities[j].vector.v_x += control
-					
+					else
+						entities[j].vector.v_y += (control / 10.0)
+					end					
 				end
 			end
 		end

@@ -1,12 +1,11 @@
 module engine
 
 import world
-import physique::nitSimulation
 import spritesheet
 import gamnit::flat
 import gamnit::display_linux
 import gamnit::limit_fps
-import physique::nitConstraints 
+
 
 # Class App is the main class of this application
 redef class App	
@@ -97,14 +96,14 @@ redef fun maximum_fps do return 60.0
 		else if event isa KeyEvent then
 			var move = event.move
 			var move2 = event.move_bis
-			if move == 1.0 then
+			if move == 1.0 or move == 10.0 then
 				for e in self.entities do
 					if e isa Player and e.name =="player1" then 
 						world.apply_event(move, e)
 					end
 				end				
 				
-			else if move == -1.0 then
+			else if move == -1.0 or move == -10.0 then
 				for e in self.entities do
 					if e isa Player and  e.name == "player1" then 
 						world.apply_event(move, e)
@@ -119,14 +118,14 @@ redef fun maximum_fps do return 60.0
 				end	
 			end
 
-			if move2 == 1.0 then
+			if move2 == 1.0 or move2 == 10.0 then
 				for e in self.entities do
 					if e isa Player and e.name =="player2" then 
 						world.apply_event(move2, e)
 					end
 				end				
 				
-			else if move2 == -1.0 then
+			else if move2 == -1.0 or move2 == -10.0  then
 				for e in self.entities do
 					if e isa Player and  e.name == "player2" then 
 						world.apply_event(move2, e)
@@ -155,18 +154,26 @@ redef class KeyEvent
 			return 1.0 
 		else if is_arrow_left then 
 			return -1.0 
-		else
+		else if is_arrow_up then 
+			return 10.0
+		else if is_arrow_down then
+			return -10.0
+		else 
 			return 0.0
 		end
 	end
 
 	fun move_bis : Float
 	do
-		if name == "e" then
+		if name == "d" then
 			return 1.0 
-		else if name =="a" then 
+		else if name == "q" then 
 			return -1.0 
-		else
+		else if name == "z" then 
+			return 10.0
+		else if name == "s" then
+			return -10.0
+		else 
 			return 0.0
 		end
 	end

@@ -56,15 +56,25 @@ class Collision
             var resY = (normalized_vector_e1_e2.v_y * normalized_Scalaire_e2) - (normalized_vector_e1_e2.v_y * normalized_Scalaire_e1)
 
             	e1.play_back	 		
-	            e1.vector.v_x = ((e1.vector.v_x + resX))
-	            e1.vector.v_y = ((e1.vector.v_y + resY))
+            	if e1 isa Player then 
+            		e1.vector.v_x = ((e1.vector.v_x + resX)) / 10.0
+	            	e1.vector.v_y = ((e1.vector.v_y + resY)) / 10.0
+            	else
+            		e1.vector.v_x = ((e1.vector.v_x + resX))
+	            	e1.vector.v_y = ((e1.vector.v_y + resY))
+            	end
+	           
 	       
 
 	        
-	            e2.play_back	       
-	            e2.vector.v_x = ((e2.vector.v_x - resX))
-	            e2.vector.v_y = ((e2.vector.v_y - resY))
-	        
+	            e2.play_back
+	            if e2 isa Player then
+		            e2.vector.v_x = ((e2.vector.v_x - resX)) / 10.0
+		            e2.vector.v_y = ((e2.vector.v_y - resY)) / 10.0
+		        else
+		        	e2.vector.v_x = ((e2.vector.v_x - resX))
+		            e2.vector.v_y = ((e2.vector.v_y - resY))
+		        end        
 	end
 end
 
